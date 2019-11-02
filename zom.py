@@ -20,7 +20,7 @@ class Scrap_Zomato:
         chrome_options = webdriver.ChromeOptions()
         chrome_options.add_argument('--headless')
         chrome_options.add_argument('--no-sandbox') # required when running as root user. otherwise you would get no sandbox errors. 
-        browser = webdriver.Chrome(excutable_path=r"/root/InstaPy/chromedriver", chrome_options=chrome_options )  
+        browser = webdriver.Chrome(excutable_path=r"/home/mrmr5669/chromedriver", chrome_options=chrome_options )  
                 
         browser.get(url)
         return browser

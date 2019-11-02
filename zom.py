@@ -30,7 +30,7 @@ class Scrap_Zomato:
         open driver
         '''
        
-        browser = webdriver.Chrome(executable_path=r'/root/InstaPy/chromedriver')
+        browser = webdriver.Chrome(executable_path=r'/home/mrmr5669/chromedriver')
         browser.get(url)
         return browser
 

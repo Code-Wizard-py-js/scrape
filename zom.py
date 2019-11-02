@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 from dateutil import parser
 from datetime import datetime,timedelta
-
+from pyvirtualdisplay import Display
 class Scrap_Zomato:
     '''Scrap Zomato'''
 
@@ -15,9 +15,13 @@ class Scrap_Zomato:
         '''
         open driver
         '''
-        options = Options()
-        options.headless = True
-        browser = webdriver.Chrome(excutable_path=r"/root/InstaPy/chromedriver",options=options)        
+        display = Display(visible=0, size=(800, 800))  
+        display.start()
+        chrome_options = webdriver.ChromeOptions()
+        chrome_options.add_argument('--headless')
+        chrome_options.add_argument('--no-sandbox') # required when running as root user. otherwise you would get no sandbox errors. 
+        browser = webdriver.Chrome(excutable_path=r"/root/InstaPy/chromedriver", chrome_options=chrome_options )  
+                
         browser.get(url)
         return browser
 

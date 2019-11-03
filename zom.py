@@ -20,7 +20,7 @@ class Scrap_Zomato:
         chrome_options = webdriver.ChromeOptions()
         chrome_options.add_argument('--headless')
         chrome_options.add_argument('--no-sandbox') # required when running as root user. otherwise you would get no sandbox errors. 
-        browser = webdriver.Chrome(excutable_path=r"/home/mrmr5669/chromedriver", chrome_options=chrome_options )  
+        browser = webdriver.Chrome( chrome_options=chrome_options )  
                 
         browser.get(url)
         return browser
@@ -29,8 +29,10 @@ class Scrap_Zomato:
         '''
         open driver
         '''
-       
-        browser = webdriver.Chrome(executable_path=r'/home/mrmr5669/chromedriver')
+        
+        display = Display(visible=0, size=(800, 800))  
+        display.start()
+        browser = webdriver.Chrome()
         browser.get(url)
         return browser
 

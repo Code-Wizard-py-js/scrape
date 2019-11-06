@@ -41,6 +41,7 @@ class Scrap_Zomato:
         fetch the html part of current browser
         '''
         html = browser.page_source
+        print(html)
         return BeautifulSoup(html,"html.parser")
 
     def get_html(self,article):
@@ -117,9 +118,10 @@ class Scrap_Zomato:
         url=self.link.split('?')[0]
         if url.endswith=='/reviews':
             browser=self.open_driver(url)
+            print(browser.title)
         else:
             browser=self.open_driver(url+'/reviews')
-            
+            print(browser.title)
         time.sleep(2)
         try:
             '''click all reviews button'''
